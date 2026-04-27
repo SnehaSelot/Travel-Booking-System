@@ -1,0 +1,23 @@
+<button onclick="book()">Test Booking</button>
+
+<script>
+function book() {
+  fetch("http://localhost/travel-booking-system/api/bookings/create.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      User_Id: 1,
+      Trip_Id: "t1",
+      Total_Amount: 2000,
+      seats: [1, 2],
+      passenger: [
+        { name: "Sneha", age: 21, gender: "F" }
+      ]
+    })
+  })
+  .then(res => res.json())
+  .then(data => alert(JSON.stringify(data)));
+}
+</script>

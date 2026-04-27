@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Hotel Booking</title>
+</head>
+<body>
+    <button onclick="testBooking()">Test Hotel Booking</button>
+    <div id="result"></div>
+
+    <script>
+        function testBooking() {
+            fetch("http://localhost/travel-booking-system/api/hotel-bookings/create.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    User_Id: 1,
+                    Hotel_Id: "h1",  // Assuming 'h' prefix
+                    Check_In: "2026-05-01",
+                    Check_Out: "2026-05-03",
+                    Total_Amount: 150.00
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('result').innerText = JSON.stringify(data, null, 2);
+            })
+            .catch(err => {
+                document.getElementById('result').innerText = 'Error: ' + err;
+            });
+        }
+    </script>
+</body>
+</html>
