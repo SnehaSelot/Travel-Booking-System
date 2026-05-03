@@ -23,7 +23,7 @@ const Review = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch("http://localhost/travel-booking-system/api/reviews/list.php");
+        const response = await fetch("http://sneha-dev.rf.gd/api/reviews/list.php");
         const data = await response.json();
         if (response.ok) {
           setReviews(data.reviews || []);
@@ -49,7 +49,7 @@ const Review = () => {
     }
 
     try {
-      const response = await fetch("http://localhost/travel-booking-system/api/reviews/create.php", {
+      const response = await fetch("http://sneha-dev.rf.gd/api/reviews/create.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

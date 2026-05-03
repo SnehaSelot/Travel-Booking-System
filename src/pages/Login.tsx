@@ -30,7 +30,7 @@ const Login = () => {
     if (!validate()) return;
 
     try {
-      const response = await fetch("http://localhost/travel-booking-system/api/users/login.php", {
+      const response = await fetch("http://sneha-dev.rf.gd/api/users/login.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ Email: email, Password: password }),

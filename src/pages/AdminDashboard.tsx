@@ -65,8 +65,8 @@ const AdminDashboard = () => {
       // Update in database
       const isHotel = editFormData.type === "hotel";
       const apiUrl = isHotel
-        ? "http://localhost/travel-booking-system/api/hotel-bookings/update.php"
-        : "http://localhost/travel-booking-system/api/bookings/update.php";
+        ? "http://sneha-dev.rf.gd/api/hotel-bookings/update.php"
+        : "http://sneha-dev.rf.gd/api/bookings/update.php";
 
       const payload = isHotel
         ? {

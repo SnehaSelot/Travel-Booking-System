@@ -53,8 +53,8 @@ const Dashboard = () => {
     try {
       const isHotel = booking.type === "hotel";
       const apiUrl = isHotel 
-        ? "http://localhost/travel-booking-system/api/hotel-bookings/cancel.php"
-        : "http://localhost/travel-booking-system/api/bookings/cancel.php";
+        ? "http://sneha-dev.rf.gd/api/hotel-bookings/cancel.php"
+        : "http://sneha-dev.rf.gd/api/bookings/cancel.php";
       
       const payload = isHotel 
         ? { Hotel_Booking_Id: booking.hotelBookingId }

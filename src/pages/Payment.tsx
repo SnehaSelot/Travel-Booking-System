@@ -52,7 +52,7 @@ const Payment = () => {
       let paymentResult;
 
       if (booking.type === "hotel") {
-        const bookingResponse = await fetch("http://localhost/travel-booking-system/api/hotel-bookings/create.php", {
+        const bookingResponse = await fetch("http://sneha-dev.rf.gd/api/hotel-bookings/create.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -67,7 +67,7 @@ const Payment = () => {
         const bookingData = await parseResponse(bookingResponse);
         if (!bookingResponse.ok) throw new Error(bookingData.error || "Hotel booking failed");
 
-        const paymentResponse = await fetch("http://localhost/travel-booking-system/api/payments/create.php", {
+        const paymentResponse = await fetch("http://sneha-dev.rf.gd/api/payments/create.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -84,7 +84,7 @@ const Payment = () => {
       } else if (booking.type === "trip") {
         if (!booking.tripId) throw new Error("Trip ID missing");
 
-        const bookingResponse = await fetch("http://localhost/travel-booking-system/api/bookings/create.php", {
+        const bookingResponse = await fetch("http://sneha-dev.rf.gd/api/bookings/create.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -100,7 +100,7 @@ const Payment = () => {
         const bookingData = await parseResponse(bookingResponse);
         if (!bookingResponse.ok) throw new Error(bookingData.error || "Trip booking failed");
 
-        const paymentResponse = await fetch("http://localhost/travel-booking-system/api/payments/create.php", {
+        const paymentResponse = await fetch("http://sneha-dev.rf.gd/api/payments/create.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

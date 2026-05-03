@@ -20,13 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-// DB connection
-$conn = new mysqli("localhost", "root", "", "travel_booking");
-if ($conn->connect_error) {
-    http_response_code(500);
-    echo json_encode(["error" => "Database connection failed"]);
-    exit();
-}
+require_once __DIR__ . '/../config.php';
 
 // Get JSON input
 $data = json_decode(file_get_contents("php://input"), true);
